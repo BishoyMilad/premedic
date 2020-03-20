@@ -23,7 +23,7 @@ class AdminLoginRegstirController extends Controller
             'email' => 'required|email|unique:admins',
             'password' => 'required|confirmed|min:6',
         ]);
-        
+
         if ($validator->fails()) {
             return response()->json($validator->errors(), 401);
         }
@@ -34,11 +34,11 @@ class AdminLoginRegstirController extends Controller
         $admin->save();
         if($admin->save())
         {
-            $token = $admin->createToken('Admin')->accessToken;    
+            $token = $admin->createToken('Admin')->accessToken;
             return response()->json(['admin-token' => $token], 200);
         }else{
             return response()->json('There is an issue with this process please try agin', 500);
-        } 
+        }
     }
 
     // admin Login
@@ -61,7 +61,7 @@ class AdminLoginRegstirController extends Controller
             return response()->json(['error' => 'UnAuthorised'], 401);
         }
     }
-    
+
     public function details()
     {
         return response()->json(['admin' => auth()->user()], 200);
