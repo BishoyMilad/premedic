@@ -15,6 +15,8 @@ class Doctor extends Authenticatable
      *
      * @var array
      */
+    protected $table='doctors';
+    protected $guard= 'doctor';
     protected $fillable = [
         'name', 'email', 'password',
     ];

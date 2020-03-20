@@ -15,6 +15,8 @@ class Pharmacist extends Authenticatable
      *
      * @var array
      */
+    protected $table='pharmacists';
+    protected $guard= 'pharmacist';
     protected $fillable = [
         'name', 'email', 'password',
     ];

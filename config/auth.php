@@ -43,9 +43,44 @@ return [
 
         'api' => [
             'driver' => 'passport',
-            'provider' => ['users', 'admins','doctors','pharmacists'],
+            'provider' =>'users',
             'hash' => false,
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admin-api' => [
+            'driver' => 'passport',
+            'provider' =>'admins',
+            'hash' => false,
+        ],
+
+        'doctor' => [
+            'driver' => 'session',
+            'provider' => 'doctors',
+        ],
+
+        'doctor-api' => [
+            'driver' => 'passport',
+            'provider' =>'doctors',
+            'hash' => false,
+        ],
+
+        'pharmacist' => [
+            'driver' => 'session',
+            'provider' => 'pharmacists',
+        ],
+
+        'pharmacist-api' => [
+            'driver' => 'passport',
+            'provider' =>'pharmacists',
+            'hash' => false,
+        ],
+        
+        
     ],
 
     /*
